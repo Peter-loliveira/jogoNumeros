@@ -10,44 +10,46 @@
     <title>Jogo da Adivinhação</title>
 </head>
 
-<body>
-    <!-- <span class="p-5"> -->
-    <!-- <div class="container col-md-4 background-color-blue border border-dark rounded p-3 "> -->
-        <div id="camposJogo" class="cor">
-            <div class="form-group  col-lg centered a">
-                <h4 class="p-3">Adivinhe o Número</h4>
-                <label class="col-md-4 control-label" for="nome_jogador">Nome do Jogador</label>
-                <div class="col-md-8">
-                    <input id="nome_jogador" name="nome_jogador" type="text" placeholder="Digite seu nome"
-                        class="form-control input-md" required="">
+<body class="conatiner">
+    <div id="camposJogo" class="centralizar">
+        <div id="dadosJogo" class="cor">
+            <h4 class="">Adivinhe o Número</h4>
+            <input id="numero" name="numeroEscolhido" type="password" class="input-md" required=""
+                placeholder="Escolha um nr">
+            <div id="robo">
+                <input type="checkbox" name="opcao" value="homem">
+                <label>Jogar Automaticamente</label>
+            </div>
+
+            <div class="centralizar">
+                <input id="nomeJogador1" name="nome_jogador" type="text" placeholder="Nome do Jogador 1"
+                    class="nomeJogador" required="">
+                <input id="nomeJogador2" name="nome_jogador" type="text" placeholder="Nome do Jogador 2"
+                    class="nomeJogador" required="">
+                <div class="">
+                    <button id="jogar" name="jogar" class="btn btn-primary btn-lg">Jogar</button>
                 </div>
             </div>
 
-            <div class="form-group col-lg centered">
-                <label class="col-md-6 control-label" for="numero_escolhido">Nr Escolhido</label>
-                <div class="col-md-8">
-                    <input id="numero_escolhido" name="numero_escolhido" type="password" placeholder=""
-                        class="form-control input-md" required="">
-                    <div class="col-md-6 p-2">
-                        <button id="chutar" name="chutar" class="btn btn-primary btn-lg">Chutar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group col-lg centered">
-                <label class="col-md-8 control-label" for="chutar"></label>
-                <div class="col-md-8">
-                    <h4>Tente acertar qual número foi escolhido:</h4>
-                    <label class="col-md-8 control-label" for="chutar"></label>
-                    <input id="chutar" name="chutar" type="text" placeholder="Adivinhar número"
-                        class="form-control input-md">
-                    <div class="col-md-8 p-2">
-                        <button id="jogar" name="jogar" class="btn btn-primary btn-lg">Jogar</button>
-                    </div>
-                </div>
-            </div>
+
         </div>
-    <!-- </div> -->
-    <!-- </span> -->
+        <div id="Jogando" class="cor2">
+            <div class="alinhado">
+                <label id="nrEscolhido">Qual número foi escolhido:</label>
+                <input id="chute" name="chutar" type="number">
+            </div>
+            <div class="">
+                <button id="chutar" name="chutar" class="btn btn-primary btn-lg">Chutar</button>
+            </div>
+
+        </div>
+
+        <div class="">
+
+
+            <!-- <input type="radio" name="opcao" value="maquina"> -->
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
