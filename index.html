@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="adivinhe.css">
+    <title>Jogo da Adivinhação</title>
+</head>
+
+<body class="conatiner">
+    <div id="camposJogo" class="centralizar">
+        <div id="dadosJogo" class="cor">
+            <h1 class="sombras">Adivinhe o Número</h1>
+            <input id="numero" name="numeroEscolhido" type="password" class="input-md"  required=""
+                placeholder="Escolha um nr">
+            <div id="robo">
+                <input type="checkbox" name="opcao" value="homem">
+                <label>Jogar Automaticamente</label>
+            </div>
+
+            <div class="centralizar">
+                <input id="nomeJogador1" name="nome_jogador" type="text" placeholder="Nome do Jogador 1"
+                    class="nomeJogador" required="" >
+                <input id="nomeJogador2" name="nome_jogador" type="text" placeholder="Nome do Jogador 2"
+                    class="nomeJogador" required="" >
+                <div class="">
+                    <button id="jogar" name="jogar" class="btn btn-primary btn-lg">Jogar</button>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="Jogando" class="cor2">
+            <h4 class="sombras">JOGO INICIADO</h4>
+            <div class="alinhado">
+                <label id="jogadorDaVez"></label>
+                <label id="nrEscolhido">Tente advinhar o Nr Escolhido:</label>
+                <input id="chute" name="chutar" type="number">
+            </div>
+            <div>
+                <button disabled id="chutar" name="chutar" class="btn btn-primary btn-lg">Chutar</button>
+            </div>
+
+            <div id="andamentoJogo">
+                <h2 id="acertou" class="acertou"></h2>
+                <h5 id="acertouTentativas" class="acertou"></h5>
+                <h5 id="vencedor" class="acertou"></h5>
+                <ul id="chutes">
+                    <li ></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+        <script src="jogo.js"></script>
+</body>
+
+</html>

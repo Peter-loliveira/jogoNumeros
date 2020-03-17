@@ -1,5 +1,5 @@
 body {
-    padding: 40px;
+    padding: 10px;
     background-color: rgb(251, 237, 212);
 }
 
@@ -7,28 +7,14 @@ body {
     background-color: white;
     border-radius: 10px;
     margin: 0 auto;
-    width: 500px;
-    height: 700px;
-    margin: 0 auto; 
+    width: 700px;
+    /* height: 700px; */
     border: 1px solid rgb(146, 146, 146);   
 }
 
 #chutar {
     margin-top: 20px;
     width: 100px;
-}
-
-#jogar {
-    margin-top: 20px;
-}
-
-#teste{
-    padding-left: 20%;
-}
-
-.a {
-    width: 800px;
-    text-align: center;
 }
 
 #nome_jogador {
@@ -66,12 +52,13 @@ body {
     width: 100px;
 }
 
+
 h4{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 input{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 #dadosJogo{
@@ -98,4 +85,36 @@ input{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#andamentoJogo{
+    margin-top: 10px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+.sombras{
+    margin-bottom: 20px;
+    text-shadow: 5px 5px 5px rgb(121, 120, 120);
+}
+
+li{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.acertou{
+    color: rgb(58, 58, 251);
+    font-weight: bold;
+    
+}
+
+#jogadorDaVez{
+    font-weight: bold;
+    font-size: 18px;
 }
