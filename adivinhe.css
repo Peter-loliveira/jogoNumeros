@@ -1,5 +1,6 @@
 body {
     padding: 10px;
+    padding-top: 100px;
     background-color: rgb(251, 237, 212);
 }
 
@@ -117,4 +118,11 @@ li{
 #jogadorDaVez{
     font-weight: bold;
     font-size: 18px;
+    /* coloquei uma latura SÓ  para evitar um efeito de descida quando esse elemnto aparece */
+    height: 20px;
+}
+
+
+button{
+    box-shadow: 5px 5px 5px rgba(24, 24, 100, 0.493);
 }
