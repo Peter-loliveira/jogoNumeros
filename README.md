@@ -1,6 +1,5 @@
 # jogoNumeros
 
-
 # Eduardo
 numeroAleatorio
 abilitaDesabilita
@@ -14,6 +13,7 @@ Testes
 # Andriano
 HTML
 JS compartilhado
+Testes
 
 # Peter
 HTML - correções para se adaptar ao JS
