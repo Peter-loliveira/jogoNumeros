@@ -9,7 +9,6 @@ body {
     border-radius: 10px;
     margin: 0 auto;
     width: 700px;
-    /* height: 700px; */
     border: 1px solid rgb(146, 146, 146);   
 }
 
@@ -32,8 +31,6 @@ body {
     width: 340px;
 }
 
-
-
 .centralizar{
     margin: 0 auto;
     text-align: center;
@@ -53,7 +50,6 @@ body {
     width: 100px;
 }
 
-
 h4{
     margin-bottom: 10px;
 }
@@ -68,18 +64,8 @@ input{
 }
 
 #Jogando{
-    /* border-radius: 0 0 10px 10px; */
     padding: 10px;
-    /* display: none; */
     
-}
-
-.cor {
-    /* background-color: chartreuse; */
-}
-
-.cor2{
-    /* background-color: chocolate; */
 }
 
 .alinhado{
@@ -118,7 +104,7 @@ li{
 #jogadorDaVez{
     font-weight: bold;
     font-size: 18px;
-    /* coloquei uma latura SÓ  para evitar um efeito de descida quando esse elemnto aparece */
+    /* coloquei uma altura SÓ para evitar um efeito de descida quando esse elemnto aparece */
     height: 20px;
 }
 

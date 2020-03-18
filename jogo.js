@@ -173,7 +173,3 @@ function partidaAutomatica() {
         nrEscolhido.value = ""
     }
 }
-
-
-let i = 0
-setInterval(function(){ if(i<10){h1.innerHTML = i ; i++;console.log(`Rodada ${i}`)}else{return 0}}, 1000);
