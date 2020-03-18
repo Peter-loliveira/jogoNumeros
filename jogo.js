@@ -94,6 +94,7 @@ var chute = () => {
         acertou.innerHTML = "ACERTOU"
         jogadorDaVez.innerHTML = ""
         jogadorVencedor.innerHTML = `O vencedor jogador vencedor foi: ${vencedor.value}`
+        btJogarNovamente.style.display = "block"
         
         //Textos para o caso do nr ser acertado logo no inico ou depois de pelo menos duas tentativas
         if (rodada == 1) {
