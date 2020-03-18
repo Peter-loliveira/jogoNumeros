@@ -1,21 +1,21 @@
 # jogoNumeros
 
 # Eduardo
-1 - numeroAleatorio.
-2 - abilitaDesabilita.
-3 - Testes
+- numeroAleatorio.
+- abilitaDesabilita.
+- Testes
 
 # Ubiratã
-1 - habilitaChute.
-2 - Função de pressionar enter.
-3 - Testes
+- habilitaChute.
+- Função de pressionar enter.
+- Testes
 
 # Andriano
-1 - HTML.
-2 - JS compartilhado.
-3 - Testes
+- HTML.
+- JS compartilhado.
+- Testes
 
 # Peter
-1 - HTML - correções para se adaptar ao JS.
-2 - JS Geral e união dos códigos enviados.
-3 - Testes
+- HTML - correções para se adaptar ao JS.
+- JS Geral e união dos códigos enviados.
+- Testes
