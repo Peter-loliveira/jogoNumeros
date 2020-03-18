@@ -1,6 +1,5 @@
 body {
     padding: 10px;
-    padding-top: 100px;
     background-color: rgb(251, 237, 212);
 }
 
@@ -111,4 +110,12 @@ li{
 
 button{
     box-shadow: 5px 5px 5px rgba(24, 24, 100, 0.493);
+}
+
+#robo{
+    margin-top: 10px;
+}
+
+#btJogarNovamente{
+    margin-bottom: 20px;
 }

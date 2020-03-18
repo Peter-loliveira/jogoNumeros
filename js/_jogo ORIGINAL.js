@@ -1,3 +1,6 @@
+//Este aquivo contem todos os códigos do jogo original, em que a partida automatica faz TODO o mjogo sem interferencia humana
+
+
 var nrEscolhido = document.getElementById("numero")
 //Variaveis para pegar os nomes digitados dos jogadores
 var jogador1 = document.getElementById("nomeJogador1")
@@ -11,31 +14,10 @@ var jogadorDaVez = document.getElementById("jogadorDaVez")
 var nrChutado = document.getElementById("chute")
 //Variavel que irá verificar se a parida ja encerrou
 var partidaFinalizada = false
-//varavel para exibir o nr escolhido
-var cbexibeNumero = document.getElementById("exibeNumero")
-//variavel para o botão de Jogar Novamente
-var btJogarNovamente = document.getElementById("btJogarNovamente")
-
-
 //variavel que iniciará uam parytida automatica
 var cbJogarAutomaticamente = document.getElementById("cbJogarAutomaticamente")
 cbJogarAutomaticamente.onclick = () => {
-    jogador2.value = "Megatron"
-    jogador2.disabled = true
-}
-
-//dá um reloadin na página
-btJogarNovamente.onclick = () => {
-    location.reload()
-}
-
-//Exibe o nr escolhido. E porque o dessa função? Porque eu quis
-cbexibeNumero.onclick = () => {
-    if (cbexibeNumero.checked) {
-        nrEscolhido.setAttribute("type", "text")
-    } else {
-        nrEscolhido.setAttribute("type", "password")
-    }
+    partidaAutomatica()
 }
 
 //Add evento que identifica se a tecla enter foi pressionada. Se sim, clica no botão de Chute
@@ -64,9 +46,13 @@ var tentativas = document.getElementById("listaChutes")
 let rodada = 0
 
 //Desabilita os campos de nr escolhido e habilita o botão de chute
-var habilitaChute = () => {
-    btJogar.disabled = true
-    btChute.disabled = false
+function habilitaChute() {
+    if (cbJogarAutomaticamente.checked) {
+        btChute.disabled = true
+    } else {
+        btChute.disabled = false
+        cbJogarAutomaticamente.disabled = true
+    }
     nrChutado.focus()
     //desabilita o campo nrEscolhido para evitar que ele psosa ser mudado DURANTE o jogo
     nrEscolhido.disabled = true
@@ -74,7 +60,7 @@ var habilitaChute = () => {
 }
 
 //A mágica
-var chute = () => {
+function chute() {
     //Cria o elemneto LI que será posteriormente inserido na UL
     let linha = document.createElement("li")
     rodada++
@@ -83,19 +69,19 @@ var chute = () => {
     if (rodada % 2 == 0) {
         //coloquei a opção de vencedor AQUI apenas para não ter que criar OUTRO IF
         jogadorDaVez.innerHTML = `Jogador da vez: ${jogador1.value}`
-        vencedor = jogador2        
+        vencedor = jogador2
     } else {
         jogadorDaVez.innerHTML = `Jogador da vez: ${jogador2.value}`
         vencedor = jogador1
     }
+
     //Verifica se o numero digitado é igual ao numero inical do jogo
     if (nrChutado.value == nrEscolhido.value) {
         partidaFinalizada = true
         acertou.innerHTML = "ACERTOU"
         jogadorDaVez.innerHTML = ""
         jogadorVencedor.innerHTML = `O vencedor jogador vencedor foi: ${vencedor.value}`
-        
-        //Textos para o caso do nr ser acertado logo no inico ou depois de pelo menos duas tentativas
+        //Textos para o caso do nr ser acertado lçogo no inico ou depois de pelo menos duas tentativas
         if (rodada == 1) {
             acertouTentativas.innerHTML = `O Nr escolhido foi ${nrEscolhido.value} e foi necessária ${rodada} tentativa.`
         } else {
@@ -103,7 +89,7 @@ var chute = () => {
         }
         //Como o nr já foi acertado, desabilita os dois componentes abaixo(botão e campo nrChute)
         btChute.disabled = true
-        nrChutado.disabled = true        
+        nrChutado.disabled = true
     } else {
         //caso valor digitado seja diferente do nr do jogo, verifica se ele é maior ou menor e exibe uma mensagem para o jogador
         let maior
@@ -122,23 +108,20 @@ var chute = () => {
         }
         //Adciona os LIs na UL, zera o conteudo do campo nrChutado
         tentativas.appendChild(linha)
-        if ((cbJogarAutomaticamente.checked) && (vencedor == jogador1)) {
-            setTimeout(function(){chuteRobo(); }, 1000);
-            // chuteRobo()
+        if (!cbJogarAutomaticamente.checked) {
+            nrChutado.value = ""
+            nrChutado.focus()
         }
     }
-    restringeRange()
-    nrChutado.focus()
-    nrChutado.value = ""
 }
 
-var numeroAleatorio = (min, max) => {
+function numeroAleatorio(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min)) + min
 }
 
-var abilitaDesabilita = (verifica) => {
+function abilitaDesabilita(verifica) {
     switch (verifica) {
         case true:
             //desabilita TODOS os componetes
@@ -166,17 +149,30 @@ var abilitaDesabilita = (verifica) => {
 var nrMin = 1
 var nrMax = 100
 
-var restringeRange = () => {
-    if ((nrMin < nrChutado.value) && (nrChutado.value < nrEscolhido.value)) {
-        nrMin = nrChutado.value
+function partidaAutomatica() {
+    if (cbJogarAutomaticamente.checked) {
+        alert("Partida automatica LIGADA. Não é necessária intervenção HUMANA. LARGA DESGRAÇA")
+        alert("O numero escolhido estará entre 1 e 100")
+        //Desabilita os campos
+        abilitaDesabilita(true)
+        jogador1.value = "Megatron"
+        jogador2.value = "Optimus Prime (aquele babaca!)"
+        nrEscolhido.value = (numeroAleatorio(nrMin, nrMax))
+        while (partidaFinalizada === false) {
+            nrChutado.value = numeroAleatorio(nrMin, nrMax)
+            btChute.onclick()
+            if ((nrMin < nrChutado.value) && (nrChutado.value < nrEscolhido.value)) {
+                nrMin = nrChutado.value
+            }
+            if ((nrMax > nrChutado.value) && (nrChutado.value > nrEscolhido.value)) {
+                nrMax = nrChutado.value
+            }
+        }
+    } else {
+        alert("Partida automatica DESLIGADA")
+        abilitaDesabilita(false)
+        jogador2.value = ""
+        jogador1.value = ""
+        nrEscolhido.value = ""
     }
-    if ((nrMax > nrChutado.value) && (nrChutado.value > nrEscolhido.value)) {
-        nrMax = nrChutado.value
-    }
-}
-
-// Função Gute do Robo
-var chuteRobo = () => {
-    nrChutado.value = numeroAleatorio(nrMin, nrMax)
-    btChute.onclick()
 }

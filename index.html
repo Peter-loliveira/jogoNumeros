@@ -12,32 +12,35 @@
 
 <body class="conatiner">
     <div id="camposJogo" class="centralizar">
-        <div id="dadosJogo" class="cor">
+        <div id="dadosJogo">
             <h1 class="sombras">Adivinhe o Número</h1>
-            <input id="numero" name="numeroEscolhido" type="password" class="input-md"  required=""
-                placeholder="Escolha um nr">
-            <div id="robo">
-                <input id="cbJogarAutomaticamente" type="checkbox" name="opcao" value="homem">
-                <label>Jogar Automaticamente</label>
+            <input id="numero" name="numeroEscolhido" type="password" class="input-md" required=""
+                placeholder="Escolha um Nº" autofocus >
+            <div>                
+                <label><input type="checkbox" name="" id="exibeNumero"> Exibe o Nº</label>                
             </div>
 
             <div class="centralizar">
                 <input id="nomeJogador1" name="nome_jogador" type="text" placeholder="Nome do Jogador 1"
-                    class="nomeJogador" required="" >
+                    class="nomeJogador" required="">
                 <input id="nomeJogador2" name="nome_jogador" type="text" placeholder="Nome do Jogador 2"
-                    class="nomeJogador" required="" >
-                <div class="">
-                    <button id="jogar" name="jogar" class="btn btn-primary btn-lg">Jogar</button>
-                </div>
+                    class="nomeJogador" required="">
             </div>
 
+            <div id="robo">
+                <input id="cbJogarAutomaticamente" type="checkbox" name="opcao" value="homem">
+                <label>Jogar Automaticamente</label>
+            </div>
+            <div class="">
+                <button id="jogar" name="jogar" class="btn btn-primary btn-lg">Jogar</button>
+            </div>
 
         </div>
-        <div id="Jogando" class="cor2">
+        <div id="Jogando">
             <h4 class="sombras">JOGO INICIADO</h4>
             <div class="alinhado">
                 <label id="jogadorDaVez"></label>
-                <label id="nrEscolhido">Tente advinhar o Nr Escolhido:</label>
+                <label id="nrEscolhido">Tente advinhar o Nº Escolhido:</label>
                 <input id="chute" name="chutar" type="number">
             </div>
             <div>
@@ -49,9 +52,12 @@
                 <h5 id="acertouTentativas" class="acertou"></h5>
                 <h5 id="vencedor" class="acertou"></h5>
                 <ul id="listaChutes">
-                    <li ></li>
+                    <li></li>
                 </ul>
             </div>
+        </div>
+        <div>
+            <button id="btJogarNovamente" class="btn btn-success">Jogar Novamente</button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -63,7 +69,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <script src="jogo.js"></script>
+    <script src="jogo.js"></script>
 </body>
 
 </html>
